@@ -10238,3 +10238,11 @@ form .row:first-child .floating-label-form-group {
 .copyright {
   background-color: #1a252f;
 }
+
+#agenda-iten{
+  border-radius: 0.5rem;
+  background-color: #6eaa6fa8;
+  margin-bottom: 1rem !important;
+
+  font-size: large;
+}
