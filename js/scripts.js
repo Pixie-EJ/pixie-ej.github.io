@@ -65,5 +65,27 @@
       });
     });
   
+    // Inserir tabela duendes
+    $(document).ready(()=>{
+      $('#table-person').show();
+
+        var nomes = ["Eduardo Saito", "Luan Halaiko", "Thiago Teixeira", "João Victor"]; 
+        var email = ["eduardo@gmail.com", "luan@gmail.com", "thiago@gmail.com", "jv@gmail.com"]; 
+        var contatos = ["(42)98432-6218", "(42)96473-2738", "(42)92738-2873", "(42)99742-2833"]; 
+        var points = ["1200", "1700", "1550", "1670"]; 
+
+        var table = '';
+        var pessoas = nomes.length;
+        var x = 0;
+        while (x < pessoas) {
+          table += '<tr><th>' + nomes[x] + '</th>';
+          table += '<th>' + email[x] + '</th>';
+          table += '<th>' + contatos[x] + '</th>';
+          table += '<th>' + points[x] + '</th></tr>';
+          x++;
+        }
+        $('#table-person tbody').html(table);
+    })
+
   })(jQuery); // End of use strict
   
