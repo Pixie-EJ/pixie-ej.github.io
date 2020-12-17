@@ -65,30 +65,36 @@
     });
   });
 
-  //adicionar ação no botão
+  //Add New Duende
   var form = document.querySelector("#contactForm");
-  $('#sendMessageButton').click(function (form) {
-
+  $('#sendMessageButton').click(function (event) {
+    event.preventDefault();
+    
     var duende = {
       name: form.name.value,
       email: form.email.value,
       phone: form.phone.value,
       message: form.message.value
     };
-    $(document).ready(() => {
-      var table = '';
-      var pessoas = duende.length;
-      var x = 0;
-      while (x < pessoas) {
-        table += '<tr><th>' + duende.name + '</th>';
-        table += '<th>' + duende.email + '</th>';
-        table += '<th>' + duende.phone + '</th>';
-        table += '<th>' + duende.message+ '</th></tr>';
-        x++;
-      }
-    })
-    
+
+    let duendeTr = document.createElement("tr");
+    let table = document.querySelector('#table-person');
+
+    duendeTr.appendChild(createTh(duende.name));
+    duendeTr.appendChild(createTh(duende.email));
+    duendeTr.appendChild(createTh(duende.phone));
+    duendeTr.appendChild(createTh(duende.message));
+
+    table.appendChild(duendeTr); 
   })
+  
+  function createTh(data) {
+    var td = document.createElement("th");
+  
+    td.textContent = data;
+  
+    return td;
+  }
 
   // Inserir tabela duendes
   $(document).ready(() => {
